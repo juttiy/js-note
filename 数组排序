@@ -1,0 +1,42 @@
+<script>
+
+		var n = 0;
+		//一种数组排序的方法
+		Array.prototype.ran = function(){
+			 var arr = this;
+			 var arr1 = [this[0]]; 
+			 for(var i = 1;i<arr.length;i++){
+			    	n++;
+			    	var target = true;
+			      aaa:  
+			      for(var j = 0;j<arr1.length;j++){
+			        	n++;
+			         if(arr[i]<arr1[j]){
+                  arr1.splice(j+2,0,arr1[j+1]);
+			            arr1[j+1]   = arr1[j];
+			            arr1[j] = arr[i];
+			            target = false;
+					        break aaa;  
+						}
+				 }
+			   if(target){
+			       arr1[i] = arr[i];
+			   }
+				}
+				return arr1;
+			}
+			
+//			    var a = [23, 48, 34, 61, 63, 82, 41, 56, 46, 70, 78, 52, 96, 42, 70, 61, 24, 64, 91, 54, 88, 60, 51, 23, 45, 78, 34, 79, 30, 73].ran();
+//			    var f = true;
+//			    for(var i = 0;i<a.length;i++){
+//			    	if(b.indexOf(a[1])<0){
+//			    		f=false;
+//			    	}
+//			    }
+    // 获取随机数组成的数组
+                var a = [];
+                
+                for(var i = 0;i<100000;i++){
+                	a[i] = Math.ceil(Math.random()*100000);
+            }
+		</script>
